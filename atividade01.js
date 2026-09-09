@@ -1,64 +1,80 @@
-//Etapa 1
+// Etapa 1
 
-let nomeItem = "Espada das Sombras";
-let precoItem = 250;
+const nomeItem = "Espada do Caos";
+const precoItem = 250;
 let raridadeItem = "Raro";
-let quantidadeEstoque = 12;
+const quantidadeEstoque = 12;
 
-console.log(`=== FICHA DO ITEM ===
+console.log(`
+=== FICHA DO ITEM ===
 Nome: ${nomeItem}
 Preço: R$ ${precoItem}
 Raridade: ${raridadeItem}
-Quantidade no estoque: ${quantidadeEstoque}`);
+Estoque: ${quantidadeEstoque} unidades
+`);
 
-//Etapa 2
 
-if(precoItem >= 0) {
+// Etapa 2
+
+if (precoItem >= 0) {
     console.log("Preço válido!");
 } else {
-    console.log("Erro! O preço não pode ser negativo.");
+    console.log("Erro: o preço não pode ser negativo.");
 }
 
-if(precoItem <= 100) {
-    console.log("Raridade comum.");
-} else if(precoItem < 500) {
-    console.log("Raridade raro.");
+if (precoItem < 100) {
+    raridadeItem = "Comum";
+} else if (precoItem >= 100 && precoItem < 500) {
+    raridadeItem = "Raro";
 } else {
-    console.log("Raridade lendário.");
+    raridadeItem = "Lendário";
 }
 
-let emDestaque = precoItem > 500 ? true : false;
-console.log(`Valorzinho muito alto né: ${emDestaque}`);
+console.log(`Raridade: ${raridadeItem}`);
 
-let disponivelCompra = quantidadeEstoque > 0 && precoItem > 0;
+const emDestaque = precoItem > 500 ? true : false;
+
+console.log(`Em destaque: ${emDestaque}`);
+
+const disponivelCompra = quantidadeEstoque > 0 && precoItem > 0;
+
 console.log(`Disponível para compra: ${disponivelCompra}`);
 
-//Etapa 3
 
-for (let i = 1; i <= 5; i++){
-    console.log(`Item ${i} cadastrado.`);
+// Etapa 3
 
-    if(i % 2 === 0) {
-        console.log(`Item topzera.`);
+for (let i = 1; i <= 5; i++) {
+    console.log(`Item ${i} cadastrado com sucesso!`);
+
+    if (i % 2 === 0) {
+        console.log("Item da promoção da semana!");
     }
 }
 
-//Etapa 4
 
-let estoque = 12;
-let vendas = 0;
+// Etapa 4
+
+let estoque = quantidadeEstoque;
 
 while (estoque > 0) {
-    vendas++;
     estoque--;
 
-    console.log(`Uma venda foi realizada. Estoque restante: ${estoque}`);
+    console.log(`Venda realizada. Estoque restante: ${estoque}`);
 }
 
-//Etapa 5
+console.log("Item esgotado!");
 
-const catalogo = ["Espada das sombras", "Asas douradas", "Capacete neon", "Pet dragão", "Skin cyberpunk"];
 
-for(const item of catalogo) {
-    console.log(`Vitrine: ${item}`);
+// Etapa 5
+
+const catalogo = [
+    "Espada do Caos",
+    "Botas flamejantes",
+    "Armadura draconiana",
+    "Pet Dragão",
+    "skin draconiana"
+];
+
+for (const item of catalogo) {
+    console.log(`🛒 ${item}`);
 }
