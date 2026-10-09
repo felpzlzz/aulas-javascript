@@ -1,7 +1,9 @@
-import { saudacao, dobro, formatarMoeda, validarEmail, obterDataFormatada } from "./utils.js";
+function mostrarBissextos(anoFinal) {
+    for (let ano = 2000; ano <= anoFinal; ano++) {
+        if (ano % 4 === 0) {
+            console.log(ano);
+        }
+    }
+}
 
-console.log(formatarMoeda(8));
-console.log(saudacao("Maria"));
-console.log(dobro(9));
-console.log(validarEmail("email@gmail.com"))
-console.log(obterDataFormatada());
+mostrarBissextos(2024);
